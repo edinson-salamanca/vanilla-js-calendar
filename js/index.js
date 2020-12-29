@@ -1,7 +1,10 @@
-const nombre_mes = document.getElementById('nombre_mes');
-nombre_mes.textContent = 'Enero 2023';
+const titleMontYear = document.getElementById('title_mont_year');
+
 
 const currentDate = new Date();
+titleMontYear.textContent = `${currentDate
+  .toDateString()
+  .substring(4, 7)} ${currentDate.getFullYear()}`;
 
 const yearInput = document.getElementById('year');
 yearInput.setAttribute('value', currentDate.getFullYear());
