@@ -33,6 +33,37 @@ select {
   height: 30px;
 }
 
+.search-button {
+  display: inline-block;
+  margin-top: 25px;
+  cursor: pointer;
+  padding: 4px;
+  background: #867e1752;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5em;
+}
+
+.search-button::before {
+  /* border: 1px solid red; */
+  content: '';
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.icon-search::before {
+  background: url('./images/icons/search.svg');
+}
+
+.search-button:hover {
+  background: green;
+  font-weight: bold;
+}
+
 .search {
   padding: 15px 15px 40px;
   position: relative;
