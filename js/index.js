@@ -12,9 +12,6 @@ const monthInput = document.getElementById('month');
 
 //const findMont = monthInput.options.find((option) => option.value === 4);
 
-const dayInput = document.getElementById('day');
-dayInput.setAttribute('value', currentDate.getDate());
-
 const currentMonth = Array.prototype.find.call(
   monthInput.options,
   (option) => option.value == currentDate.getMonth(),
