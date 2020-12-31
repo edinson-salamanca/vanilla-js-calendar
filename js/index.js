@@ -45,15 +45,15 @@ function generateCalendarDays() {
 
     if (day.getMonth() == monthInput.value) {
       days += `<li
-                          class='day-number'
-                          ${
-                            i === 1
-                              ? day.getDay() === 0
-                                ? 'style=grid-column:7'
-                                : 'style=grid-column:' + day.getDay()
-                              : ''
-                          }
-                        >${day.getDate()}</li>`;
+                class='day-number'
+                ${
+                  i === 1
+                    ? day.getDay() === 0
+                      ? 'style=grid-column:7'
+                      : 'style=grid-column:' + day.getDay()
+                    : ''
+                }
+              >${day.getDate()}</li>`;
     }
   }
   return days;
