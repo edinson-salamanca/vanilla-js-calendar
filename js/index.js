@@ -3,9 +3,7 @@ const searchButton = document.getElementById('search-button');
 const calenderDays = document.getElementById('calenderDays');
 
 const currentDate = new Date();
-titleMontYear.textContent = `${currentDate
-  .toDateString()
-  .substring(4, 7)} ${currentDate.getFullYear()}`;
+createCalendarTitle(currentDate);
 
 const yearInput = document.getElementById('year');
 yearInput.setAttribute('value', currentDate.getFullYear());
@@ -32,9 +30,7 @@ searchButton.onclick = function () {
   let newDayNumbers = '';
 
   let chosenDate = new Date(yearInput.value, monthInput.value);
-  titleMontYear.textContent = `${chosenDate
-    .toDateString()
-    .substring(4, 7)} ${chosenDate.getFullYear()}`;
+  createCalendarTitle(chosenDate);
 
   for (let i = 1; i <= 31; i++) {
     let day = new Date(yearInput.value, monthInput.value, i);
@@ -54,3 +50,9 @@ searchButton.onclick = function () {
 
   dayNames[6].insertAdjacentHTML('afterend', newDayNumbers);
 };
+
+function createCalendarTitle(chosenDate) {
+  titleMontYear.textContent = `${chosenDate
+    .toDateString()
+    .substring(4, 7)} ${chosenDate.getFullYear()}`;
+}
