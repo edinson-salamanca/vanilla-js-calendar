@@ -119,10 +119,6 @@ select {
   padding: 0px;
 }
 
-.first-day {
-  grid-column-start: 2;
-}
-
 .day-name {
   background: #eee;
   color: black;
