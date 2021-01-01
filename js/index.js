@@ -1,36 +1,42 @@
 const titleMontYear = document.getElementById('title_mont_year');
 const searchButton = document.getElementById('search-button');
-const calenderDays = document.getElementById('calenderDays');
-
-const currentDate = new Date();
-createCalendarTitle(currentDate);
-
 const yearInput = document.getElementById('year');
-yearInput.setAttribute('value', currentDate.getFullYear());
-
 const monthInput = document.getElementById('month');
-
-//const findMont = monthInput.options.find((option) => option.value === 4);
-
-const currentMonth = Array.prototype.find.call(
-  monthInput.options,
-  (option) => option.value == currentDate.getMonth(),
-);
-
-monthInput.selectedIndex = currentMonth.value;
 const dayNames = [...document.getElementsByClassName('day-name')];
 
-searchButton.onclick = function () {
+displayCurrentCalendar();
+
+searchButton.addEventListener('click', searchButtonHandle);
+
+function searchButtonHandle() {
+  let chosenDate = new Date(yearInput.value, monthInput.value);
+
+  displayCalendar(chosenDate);
+}
+
+function displayCurrentCalendar() {
+  let currenDate = new Date();
+  yearInput.setAttribute('value', currenDate.getFullYear());
+
+  const currentMonth = Array.prototype.find.call(
+    monthInput.options,
+    (option) => option.value == currenDate.getMonth(),
+  );
+  monthInput.selectedIndex = currentMonth.value;
+
+  displayCalendar(currenDate);
+}
+
+function displayCalendar(chosenDate) {
   let dayNumbers = [...document.getElementsByClassName('day-number')];
   dayNumbers.forEach((day) => day.remove());
 
-  let chosenDate = new Date(yearInput.value, monthInput.value);
   createCalendarTitle(chosenDate);
 
   let daysGenerated = generateCalendarDays();
 
   dayNames[6].insertAdjacentHTML('afterend', daysGenerated);
-};
+}
 
 function createCalendarTitle(chosenDate) {
   titleMontYear.textContent = `${chosenDate
