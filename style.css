@@ -103,7 +103,6 @@ footer {
 
 .calender {
   display: grid;
-  grid-row: row 2px;
   justify-content: center;
   padding-top: 263px;
   margin-bottom: 50em;
@@ -117,7 +116,6 @@ footer {
   border-radius: 4px;
   background: #3566ef;
   color: #eee;
-  height: 300px;
   /* border: 1px solid red; */
 }
 
