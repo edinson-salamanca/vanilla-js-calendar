@@ -18,12 +18,13 @@ li {
   text-align: center;
   /* border: 1px solid red; */
 }
+
 input,
 select {
   background-color: bisque;
   border: 2px solid #eee;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
   height: 23px;
   text-align: center;
@@ -31,6 +32,14 @@ select {
 
 select {
   height: 30px;
+}
+
+footer {
+  background: gray;
+  text-align: center;
+  width: 100%;
+  padding: 1em 0;
+  position: sticky;
 }
 
 .search-button {
@@ -65,9 +74,11 @@ select {
 }
 
 .search {
-  padding: 15px 15px 40px;
-  position: relative;
-  z-index: 2;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+
+  z-index: 1;
   background: rgba(46, 2, 2, 0.89);
 }
 
@@ -91,29 +102,28 @@ select {
 }
 
 .calender {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-row: row 2px;
   justify-content: center;
-
+  padding-top: 263px;
+  margin-bottom: 50em;
+  height: 35vh;
   /* border: 1px solid red; */
 }
 
 .calender-content {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  display: inline-block;
   margin-left: 0px;
   text-align: center;
   border-radius: 4px;
   background: #3566ef;
   color: #eee;
+  height: 300px;
   /* border: 1px solid red; */
 }
 
 .title-calender {
   background: rgba(3, 241, 23, 0.466);
   color: #140433;
-  display: block;
   font-size: 40px;
   margin: 0px;
   padding: 0px;
@@ -124,4 +134,28 @@ select {
   color: black;
   font-weight: bold;
   text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+  li {
+    font-size: 20px;
+  }
+
+  .title-calender {
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width: 40em) {
+  li {
+    font-size: 50px;
+  }
+
+  .title-calender {
+    font-size: 80px;
+  }
+
+  .calender-content {
+    height: 600px;
+  }
 }
